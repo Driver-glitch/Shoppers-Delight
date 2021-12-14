@@ -1,11 +1,10 @@
 import React from "react";
-import {Row, Col, Button, Offcanvas, Nav} from "react-bootstrap";
+import { Row, Col, Button, Offcanvas, Nav } from "react-bootstrap";
 import { FaCartPlus } from "react-icons/fa";
 
- function Cart({show, setShow}) {
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+function Cart({ show, setShow }) {
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <>
