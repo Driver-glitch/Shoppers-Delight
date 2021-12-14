@@ -23,7 +23,7 @@ function Cart({ show, setShow }) {
       </Row>
       {/*This is the cart modal and only shows when the cart button is clicked*/}
       <Offcanvas show={show} onHide={handleClose}> 
-        <Offcanvas.Header
+        <Offcanvas.Header  
           className="pt-1"
           style={{ border: "solid 1px grey" }}
           closeButton
