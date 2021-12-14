@@ -10,7 +10,7 @@
     "server:dev": "nodemon index.js",
     "db:build": "node ./db/init_db",
     "start": "node index.js"
-  },
+  }, 
   "engines": {
     "node": "16.0.0"
   },
