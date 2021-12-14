@@ -1,8 +1,8 @@
-const dotenv = require("dotenv");
-const result = dotenv.config();
-if (result.error) {
-  throw result.error;
-}
+// const dotenv = require("dotenv");
+// const result = dotenv.config();
+// if (result.error) {
+//   throw result.error;
+// }
 
 //console.log(result.parsed);
 // build and export your unconnected client here
