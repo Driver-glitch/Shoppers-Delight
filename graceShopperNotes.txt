@@ -1,0 +1,20 @@
+GRACE SHOPPER
+(Capstone Group Project)
+
+sudo service postgresql start
+psql shopper-dev
+
+npm run db:build
+
+bootstrap card element;
+
+terminal notes:
+git branch -m createProfile
+git checkout -b saturday
+
+pkill -f node
+CHOKIDAR_USEPOLLING=true npm run client:dev
+
+npx browserslist@latest --update-db
+npm install jsonwebtoken
+Database
