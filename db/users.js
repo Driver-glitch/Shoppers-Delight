@@ -1,7 +1,5 @@
 const client = require("./client");
 
-
-
 async function createUser({ username, password }) {
   try {
     const {
@@ -47,17 +45,18 @@ async function getUserById(id) {
       `
         SELECT id, username
         FROM users WHERE id = $1;
-      `, [id]
+      `,
+      [id]
     );
     if (!user) {
-      return null
-    };
-    delete user.password
+      return null;
+    }
+    delete user.password;
     return user;
   } catch (error) {
-    throw error
-  };
-};
+    throw error;
+  }
+}
 async function getUserByUsername(username) {
   try {
     const { rows } = await client.query(

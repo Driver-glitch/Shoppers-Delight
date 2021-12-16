@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
-
 import {
   Home,
   Discord,
@@ -21,27 +19,23 @@ import {
   Login,
   Register,
   Products,
-  AllProducts
+  AllProducts,
 } from "./components";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
   const [cart, setCart] = useState([]);
-  
-
 
   return (
-    <Router>
-      <div className="App">
-        <div className="d-flex flex-column min-vh-100">
-          <NavigationBar cart={cart} setCart={setCart} />
-
-          <Switch>
-            <Route>
+    <>
+      <Router>
+        <div className="App">
+          <div className="d-flex flex-column min-vh-100">
+            <NavigationBar itemsInCart={cart} />
+            <Switch>
               <Route exact path="/">
                 <Home />
-                
               </Route>
               <Route exact path="/Home">
                 <Home />
@@ -49,7 +43,6 @@ const App = () => {
               <Route path="/Settings">
                 <Settings />
               </Route>
-
               <Route path="/Docs">
                 <Docs />
               </Route>
@@ -59,14 +52,12 @@ const App = () => {
               <Route path="/Careers2">
                 <Careers2 />
               </Route>
-
               <Route path="/ContactUs">
                 <ContactUs />
               </Route>
               <Route path="/Discord">
                 <Discord />
               </Route>
-
               <Route path="/Newsletter">
                 <Newsletter />
               </Route>
@@ -92,27 +83,19 @@ const App = () => {
               <Route path="/Profile">
                 <Profile />
               </Route>
-              <Route path="/products/:id" >
-                <Products/>
+              <Route path="/products/:id">
+                <Products cart={cart} setCart={setCart} />
               </Route>
-              <Route path="/products">
+              <Route exact path="/products">
                 <AllProducts />
-              </Route>             
-              <Route />
-
-              {/* Daniel ends here */}
-            </Route>
-          </Switch>
-          <div className="wrapper flex-grow-1"></div>
-          <Footer className="mt-auto" />
+              </Route>
+            </Switch>
+            <div className="wrapper flex-grow-1"></div>
+            <Footer className="mt-auto" />
+          </div>
         </div>
-      </div>
-
-      {/* Evan starts here */}
-      {/* The products is appearing on a few pages */}
-      {/* <Products allProducts={allProducts}/> */}
-      {/* Evan ends here */}
-    </Router>
+      </Router>
+    </>
   );
 };
 

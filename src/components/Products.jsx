@@ -17,9 +17,11 @@ import { useParams, Link } from "react-router-dom";
 import { FaCartPlus } from "react-icons/fa";
 
 const Products = (props) => {
+  let { cart, setCart } = props;
+
+  //let [cart, setCart] = useState([]);
   let [singleProduct, setSingleProduct] = useState([]);
   let { id } = useParams();
-  
 
   const fetchSingleProduct = async () => {
     const product = await getSingleProduct(id);
@@ -29,11 +31,21 @@ const Products = (props) => {
   useEffect(() => {
     fetchSingleProduct();
   }, []);
-    
+
+  const handleCart = (product) => {
+    console.log(product, "product ");
+    let newCart = [...cart];
+    newCart.push(product);
+    newCart = newCart.filter(function (item, pos) {
+      return newCart.indexOf(item) == pos;
+    });
+    console.log(newCart);
+    setCart(newCart);
+  };
+
   return (
     <div className="bg-image">
       <div className="mask">
-        {console.log(singleProduct)}
         <Container>
           <Row className="m-5">
             <Card
@@ -44,21 +56,21 @@ const Products = (props) => {
               <Card.Img className="mt-3" src={singleProduct.image_url} />
               <Card.Body className="text-center">
                 <Card.Title>
-                  <Link to={`/${singleProduct.id}`}>
-                    <Button>{singleProduct.name}</Button>
-                  </Link>
+                  <Button
+                    style={{ width: "50%", cursor: "pointer" }}
+                    onClick={() => handleCart(singleProduct.id)}
+                  >
+                    <FaCartPlus />
+                    <Card.Text className="pt-2" style={{ fontSize: ".5em" }}>
+                      Add to Cart
+                    </Card.Text>
+                  </Button>
                 </Card.Title>
-                <Card.Text>{singleProduct.description}</Card.Text>
-                <Card.Text>{singleProduct.price}</Card.Text>
+                <Card.Text>{`$${singleProduct.price}`}</Card.Text>{" "}
                 <Card.Text>{singleProduct.current_owner}</Card.Text>
-                <Card.Text>{singleProduct.for_sale}</Card.Text>
               </Card.Body>
             </Card>
-            );
           </Row>
-          <Link>
-            <FaCartPlus style={{ marginRight: "10px" }} />
-          </Link>
         </Container>
       </div>
     </div>

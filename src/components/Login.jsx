@@ -18,15 +18,13 @@ const Login = ({ isLoggedIn, setIsLoggedIn, setUsername, username }) => {
   let [password, setPassword] = useState("");
 
   let loginForm = (
-    <div
-      className="bg-image">
-      <div
-        class="mask">
+    <div className="bg-image">
+      <div className="mask">
         <Container>
           <Col className="text-white" md={{ span: 4, offset: 4 }}>
             <h2>
               {" "}
-              <b class="row justify-content-center"> Login Form </b>{" "}
+              <b className="row justify-content-center"> Login Form </b>{" "}
             </h2>
             <br></br>
             <br></br>
@@ -90,43 +88,26 @@ const Login = ({ isLoggedIn, setIsLoggedIn, setUsername, username }) => {
     </div>
   );
 
-  console.log(username, "log of USERNAME");
-
   let logoutButton = (
-    <div
-    className="bg-image "
-    style={{
-      backgroundImage:
-        "url('https://i2.wp.com/files.123freevectors.com/wp-content/original/115982-abstract-cool-blue-blurred-lights-background-design.jpg?w=800&q=95)",
-      height: "100vh",
-      backgroundSize: "100%",
-    }}
-  >
-    <div
-        class="mask"
-        style={{
-          backgroundColor: "rgba(0, 0, 0, 0.6)",
-          height: "100vh",
-          backgroundSize: "100%",
-        }}
-      >
-    <Container className="text-center">
-      <br /> <br /> <br /> <br /> <br />
-      <ButtonToolbar className="mb-2">
-        <Button
-          variant="primary"
-          onClick={() => {
-            setIsLoggedIn(false);
-            setUsername("");
-            setPassword("");
-            history.push("/Login");
-          }}
-        >
-          Logout
-        </Button>
-      </ButtonToolbar>
-    </Container>
-    </div>
+    <div className="bg-image ">
+      <div className="mask">
+        <Container className="text-center">
+          <br /> <br /> <br /> <br /> <br />
+          <ButtonToolbar className="mb-2">
+            <Button
+              variant="primary"
+              onClick={() => {
+                setIsLoggedIn(false);
+                setUsername("");
+                setPassword("");
+                history.push("/Login");
+              }}
+            >
+              Logout
+            </Button>
+          </ButtonToolbar>
+        </Container>
+      </div>
     </div>
   );
   return isLoggedIn ? logoutButton : loginForm;

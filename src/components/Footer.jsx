@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { MDBFooter, MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
 import favicon from "./images/favicon-32x32.png";
 
@@ -25,16 +26,14 @@ export default function App() {
               <br />
               Marketplace
             </h5>
-
             <ul className="list-unstyled mb-0">
               <li>
-                <a href="All_NFTs" className="text-white-50">
+                <Link to="/products" className="text-white-50">
                   All NFTs
-                </a>
+                </Link>
               </li>
             </ul>
           </MDBCol>
-
           <MDBCol lg="2" md="6" className="mb-4 mb-md-0">
             <h5 className="text-uppercase mb-2">
               <br />
@@ -43,14 +42,14 @@ export default function App() {
 
             <ul className="list-unstyled">
               <li>
-                <a href="Profile" className="text-white-50">
+                <Link to="/Profile" className="text-white-50">
                   Profile
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="Settings" className="text-white-50">
+                <Link to="/Settings" className="text-white-50">
                   Settings
-                </a>
+                </Link>
               </li>
             </ul>
           </MDBCol>
@@ -63,15 +62,15 @@ export default function App() {
 
             <ul className="list-unstyled mb-0">
               <li>
-                <a href="Newsletter" className="text-white-50">
+                <Link to="/Newsletter" className="text-white-50">
                   Newsletter
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="Docs" className="text-white-50">
+                <Link to="/Docs" className="text-white-50">
                   Docs
-                </a>
+                </Link>
               </li>
             </ul>
           </MDBCol>
@@ -84,14 +83,14 @@ export default function App() {
 
             <ul className="list-unstyled mb-0">
               <li>
-                <a href="About" className="text-white-50">
+                <Link to="/About" className="text-white-50">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="Careers" className="text-white-50">
+                <Link to="/Careers" className="text-white-50">
                   Careers
-                </a>
+                </Link>
               </li>
             </ul>
           </MDBCol>
@@ -103,9 +102,12 @@ export default function App() {
         style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
       >
         &copy; {new Date().getFullYear()} Copyright:{" "}
-        <a className="text-white" href="https://shoppersdelight.herokuapp.com/">
+        <Link
+          className="text-white"
+          to="https://shoppersdelight.herokuapp.com/"
+        >
           ShoppersDelight.com
-        </a>
+        </Link>
       </div>
     </MDBFooter>
   );

@@ -4,10 +4,8 @@ import React from "react";
 function Newsletter() {
   return (
     <div>
-      <div
-        className="bg-image">
-        <div
-          class="mask">
+      <div className="bg-image">
+        <div className="mask">
           <div>
             <h1 className="text-center text-white p-5 mb-3 mb-md-0">
               Subscribe To Our Newsletter!
@@ -35,7 +33,7 @@ function Newsletter() {
                   </div>
 
                   <div className="text-center p-4 mb-1 mb-md-0">
-                    <button type="button" class="btn btn-primary">
+                    <button type="button" className="btn btn-primary">
                       Send
                     </button>
                   </div>

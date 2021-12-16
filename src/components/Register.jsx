@@ -11,15 +11,13 @@ const Register = ({ isLoggedIn, setIsLoggedIn }) => {
   const [password, setPassword] = useState("");
   let history = useHistory();
   return (
-    <div
-      className="bg-image">
-      <div
-        class="mask">
+    <div className="bg-image">
+      <div className="mask">
         <Container>
           <br /> <br /> <br />
           <Col className="text-white" md={{ span: 4, offset: 4 }}>
             <h2>
-              <b class="row justify-content-center"> Please Register </b>
+              <b className="row justify-content-center"> Please Register </b>
             </h2>
             <br></br>
             <br></br>

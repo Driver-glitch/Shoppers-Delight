@@ -36,7 +36,7 @@ const Profile = () => {
       <div className="mask"></div>
       <Container>
         <h1 className="text-center text-white p-4 mt-0 mb-1 mb-md-0">
-          {userName}'s Profile Page
+          {userName} Profile Page
         </h1>
         <h3 className="text-center text-white p-4 mt-0 mb-1 mb-md-0">
           Your NFTs
@@ -44,7 +44,8 @@ const Profile = () => {
         <Row className="m-5">
           {allProducts && allProducts.length
             ? allProducts.map((product, index) => {
-                //console.log(product);
+                console.log(product.current_owner, "current owner");
+                console.log(userName, "userName");
                 if (userName === product.current_owner) {
                   return (
                     <Card
